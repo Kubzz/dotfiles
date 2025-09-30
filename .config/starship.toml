@@ -106,13 +106,13 @@ format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 disabled = false
 style = "bg:sapphire black"
 symbol = ""
-format = '[ $symbol $context( \$namespace\)) ]($style)'
+format = '[ $symbol $context( \($namespace\)) ]($style)'
 
 [aws]
 disabled = false
 style = "bg:sapphire black"
-symbol = ""
-format = '[$symbol ($profile )(\$region\) )]($style)'
+symbol = " "
+format = '[$symbol $profile( \($region\)) ]($style)'
 
 [time]
 disabled = false
