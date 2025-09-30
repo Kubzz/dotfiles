@@ -111,7 +111,7 @@ format = '[ $symbol $context( \($namespace\)) ]($style)'
 [aws]
 disabled = false
 style = "bg:sapphire black"
-symbol = " "
+symbol = ""
 format = '[$symbol $profile( \($region\)) ]($style)'
 
 [time]
