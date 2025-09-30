@@ -102,6 +102,18 @@ symbol = ""
 style = "bg:sapphire"
 format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
+[kubernetes]
+disabled = false
+style = "bg:sapphire black"
+symbol = ""
+format = '[ $symbol $context( \$namespace\)) ]($style)'
+
+[aws]
+disabled = false
+style = "bg:sapphire black"
+symbol = ""
+format = '[$symbol ($profile )(\$region\) )]($style)'
+
 [time]
 disabled = false
 time_format = "%R"
@@ -131,6 +143,12 @@ style = "bg:lavender"
 disabled = false
 show_notifications = true
 min_time_to_notify = 45000
+
+[sudo]
+disabled = false
+symbol = ""
+style = "bg:red bold black"
+format = '[ $symbol ]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
