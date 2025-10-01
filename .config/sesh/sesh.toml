@@ -1,0 +1,36 @@
+[[session]]
+name = "Dev-Tools"
+path = "~"
+windows = [ "Btop++", "LazyGit", "LazyDocker", "Yazi", "Cloudlens", "K9S", "Posting", "Bash" ]
+
+[[window]]
+name = "Btop++"
+startup_script = "btop"
+
+[[window]]
+name = "LazyGit"
+startup_script = "lazygit"
+
+[[window]]
+name = "LazyDocker"
+startup_script = "lazydocker"
+
+[[window]]
+name = "Yazi"
+startup_script = "yazi"
+
+[[window]]
+name = "Cloudlens"
+startup_script = "cloudlens"
+
+[[window]]
+name = "K9S"
+startup_script = "k9s"
+
+[[window]]
+name = "Posting"
+startup_script = "posting"
+
+[[window]]
+name = "Bash"
+startup_script = "bash -l"
