@@ -1,0 +1,10 @@
+git:
+  paging:
+    pager: delta --dark --paging=never
+  commit:
+    signOff: false
+
+keybinding:
+  universal:
+    quit: 'q'
+    return: '<esc>'
