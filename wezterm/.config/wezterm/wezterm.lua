@@ -2,12 +2,11 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Font
-config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' })
+config.font = wezterm.font('JetBrains Mono', { weight = 'Regular' })
 config.font_size = 12.0
 config.line_height = 1.1
 
 -- Window
-config.window_decorations = "RESIZE"
 config.window_padding = { left = 6, right = 6, top = 6, bottom = 6 }
 config.initial_cols = 140
 config.initial_rows = 40
