@@ -28,7 +28,7 @@ config.animation_fps = 60
 config.front_end = "WebGpu"
 
 -- Leader key for wezterm-level actions
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = 'w', mods = 'CTRL', timeout_milliseconds = 1000 }
 
 config.keys = {
   { key = '|', mods = 'LEADER|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
