@@ -14,7 +14,7 @@
 # /!\ this disables some of Oh my tmux! bindings described in README.md
 #   - true
 #   - false (default)
-tmux_conf_preserve_stock_bindings=true
+tmux_conf_preserve_stock_bindings=false
 
 
 # -- session creation ----------------------------------------------------------
@@ -23,7 +23,8 @@ tmux_conf_preserve_stock_bindings=true
 #   - true
 #   - false (default)
 #   - disabled (do not modify new-session bindings)
-tmux_conf_new_session_prompt=true
+tmux_conf_new_session_prompt=false
+ls
 
 # new session retains current path, possible values are:
 #   - true
@@ -69,7 +70,7 @@ tmux_conf_new_pane_reconnect_ssh=false
 # automatic detection relies on the COLORTERM environment variable being defined
 # to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
 # see https://github.com/termstandard/colors
-tmux_conf_24b_colour=auto
+tmux_conf_24b_colour=true
 
 
 # -- theming -------------------------------------------------------------------
@@ -86,23 +87,23 @@ tmux_conf_24b_colour=auto
 tmux_conf_theme=enabled
 
 # default theme
-tmux_conf_theme_colour_1="#080808"    # dark gray
-tmux_conf_theme_colour_2="#303030"    # gray
-tmux_conf_theme_colour_3="#8a8a8a"    # light gray
-tmux_conf_theme_colour_4="#00afff"    # light blue
-tmux_conf_theme_colour_5="#ffff00"    # yellow
-tmux_conf_theme_colour_6="#080808"    # dark gray
-tmux_conf_theme_colour_7="#e4e4e4"    # white
-tmux_conf_theme_colour_8="#080808"    # dark gray
-tmux_conf_theme_colour_9="#ffff00"    # yellow
-tmux_conf_theme_colour_10="#ff00af"   # pink
-tmux_conf_theme_colour_11="#5fff00"   # green
-tmux_conf_theme_colour_12="#8a8a8a"   # light gray
-tmux_conf_theme_colour_13="#e4e4e4"   # white
-tmux_conf_theme_colour_14="#080808"   # dark gray
-tmux_conf_theme_colour_15="#080808"   # dark gray
-tmux_conf_theme_colour_16="#d70000"   # red
-tmux_conf_theme_colour_17="#e4e4e4"   # white
+#tmux_conf_theme_colour_1="#080808"    # dark gray
+#tmux_conf_theme_colour_2="#303030"    # gray
+#tmux_conf_theme_colour_3="#8a8a8a"    # light gray
+#tmux_conf_theme_colour_4="#00afff"    # light blue
+#tmux_conf_theme_colour_5="#ffff00"    # yellow
+#tmux_conf_theme_colour_6="#080808"    # dark gray
+#tmux_conf_theme_colour_7="#e4e4e4"    # white
+#tmux_conf_theme_colour_8="#080808"    # dark gray
+#tmux_conf_theme_colour_9="#ffff00"    # yellow
+#tmux_conf_theme_colour_10="#ff00af"   # pink
+#tmux_conf_theme_colour_11="#5fff00"   # green
+#tmux_conf_theme_colour_12="#8a8a8a"   # light gray
+#tmux_conf_theme_colour_13="#e4e4e4"   # white
+#tmux_conf_theme_colour_14="#080808"   # dark gray
+#tmux_conf_theme_colour_15="#080808"   # dark gray
+#tmux_conf_theme_colour_16="#d70000"   # red
+#tmux_conf_theme_colour_17="#e4e4e4"   # white
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
@@ -303,7 +304,25 @@ tmux_conf_theme_mouse_attr="none"
 
 # root indicator
 tmux_conf_theme_root="!"
-tmux_conf_theme_root_fg="none"
+tmux_conf_theme_colour_1="#1e1e2e"    # base      (dark text on bright bg)
+tmux_conf_theme_colour_2="#313244"    # surface0  (pane border)
+tmux_conf_theme_colour_3="#a6adc8"    # subtext0  (default status text)
+tmux_conf_theme_colour_4="#89b4fa"    # blue      (main accent)
+tmux_conf_theme_colour_5="#f9e2af"    # yellow    (messages/mode)
+
+tmux_conf_theme_colour_6="#1e1e2e"    # base      (status-left fg 1)
+tmux_conf_theme_colour_7="#1e1e2e"    # base      (status-left fg 2)
+tmux_conf_theme_colour_8="#1e1e2e"    # base      (status-left fg 3)
+tmux_conf_theme_colour_9="#cba6f7"    # mauve     (status-left bg 1)
+tmux_conf_theme_colour_10="#f5c2e7"   # pink      (status-left bg 2)
+tmux_conf_theme_colour_11="#a6e3a1"   # green     (status-left bg 3)
+
+tmux_conf_theme_colour_12="#1e1e2e"   # base      (status-right fg 1)
+tmux_conf_theme_colour_13="#1e1e2e"   # base      (status-right fg 2)
+tmux_conf_theme_colour_14="#1e1e2e"   # base      (status-right fg 3)
+tmux_conf_theme_colour_15="#313244"   # surface0  (status-right bg 1)
+tmux_conf_theme_colour_16="#f38ba8"   # red       (status-right bg 2)
+tmux_conf_theme_colour_17="#89b4fa"   # blue      (status-right bg 3)tmux_conf_theme_root_fg="none"
 tmux_conf_theme_root_bg="none"
 tmux_conf_theme_root_attr="bold,blink"
 
@@ -461,7 +480,13 @@ tmux_conf_uninstall_plugins_on_reload=false
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
+set -g @plugin 'omerxx/tmux-sessionx'
 
+# -- custom keymaps ------------------------------------------------------------
+
+set -g @sessionx-bind 'o'
+
+source-file ~/.config/theme/current/tmux.conf
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
