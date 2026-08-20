@@ -105,6 +105,27 @@ tmux_conf_theme=enabled
 #tmux_conf_theme_colour_16="#d70000"   # red
 #tmux_conf_theme_colour_17="#e4e4e4"   # white
 
+source-file ~/.config/theme/current/tmux.conf
+
+tmux_conf_theme_colour_1="#{@my_colour1}"
+tmux_conf_theme_colour_2="#{@my_colour2}"
+tmux_conf_theme_colour_3="#{@my_colour3}"
+tmux_conf_theme_colour_4="#{@my_colour4}"
+tmux_conf_theme_colour_5="#{@my_colour5}"
+tmux_conf_theme_colour_6="#{@my_colour6}"
+tmux_conf_theme_colour_7="#{@my_colour7}"
+tmux_conf_theme_colour_8="#{@my_colour8}"
+tmux_conf_theme_colour_9="#{@my_colour9}"
+tmux_conf_theme_colour_10="#{@my_colour10}"
+tmux_conf_theme_colour_11="#{@my_colour11}"
+tmux_conf_theme_colour_12="#{@my_colour12}"
+tmux_conf_theme_colour_13="#{@my_colour13}"
+tmux_conf_theme_colour_14="#{@my_colour14}"
+tmux_conf_theme_colour_15="#{@my_colour15}"
+tmux_conf_theme_colour_16="#{@my_colour16}"
+tmux_conf_theme_colour_17="#{@my_colour17}"
+#tmux_conf_theme_status_bg="#{@my_status_bg}"
+
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
 #tmux_conf_theme_colour_2="colour8"
@@ -486,7 +507,6 @@ set -g @plugin 'omerxx/tmux-sessionx'
 
 set -g @sessionx-bind 'o'
 
-source-file ~/.config/theme/current/tmux.conf
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
