@@ -9,4 +9,5 @@
 # 2. add the leading part of that filename ('<my_aliases>' in this example) to
 #    the 'aliases' array in your ~/.bashrc
 
+# LazyGit
 alias lg='lazygit'

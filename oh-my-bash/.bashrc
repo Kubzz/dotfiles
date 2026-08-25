@@ -158,4 +158,4 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 
-eval "$(starship init bash)"
+eval "$(goenv init -)"
