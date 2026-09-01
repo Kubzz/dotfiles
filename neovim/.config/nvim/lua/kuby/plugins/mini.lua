@@ -4,6 +4,7 @@ return {
 		version = false,
 		lazy = false,
 		config = function()
+			require("mini.map").setup()
 			require("mini.move").setup({
 				mappings = {
 					left = "<S-h>",
@@ -22,11 +23,18 @@ return {
 		end,
 		keys = {
 			{
-				"<leader>e",
+				"<leader>so",
 				function()
-					require("mini.files").open()
+					require("mini.map").open()
 				end,
-				desc = "Open file explorer",
+				desc = "Open Scroll Map",
+			},
+			{
+				"<leader>sc",
+				function()
+					require("mini.map").close()
+				end,
+				desc = "Close Scroll Map",
 			},
 		},
 	},
