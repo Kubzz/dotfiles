@@ -3,7 +3,7 @@
 add_newline = true
 
 format = """\
-[╭╴](238)[](red)$os$username[](bg:peach fg:red)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$c$rust$golang$nodejs$java$kotlin$python[](fg:green bg:sapphire)$kubernetes$aws[](fg:sapphire bg:lavender)$memory_usage[ ](fg:lavender)$cmd_duration\
+[╭╴](238)[](red)$os$username[](bg:peach fg:red)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$c$rust$golang$nodejs$java$kotlin$python[](fg:green bg:blue)$kubernetes$aws[](fg:blue bg:lavender)$memory_usage[ ](fg:lavender)$cmd_duration\
 $line_break[╰─](238)[](red)$sudo[](bg:red fg:red)$character"""
 
 palette = 'catppuccin_mocha'

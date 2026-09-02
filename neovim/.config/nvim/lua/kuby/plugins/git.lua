@@ -3,7 +3,7 @@ return {
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
 		opts = {
-			signs_staged_enabled = true,
+			signs_staged_enable = true,
 			signcolumn = true,
 		},
 		keys = {

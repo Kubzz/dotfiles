@@ -30,6 +30,12 @@ return {
 							action = ":lua Snacks.dashboard.pick('oldfiles')",
 						},
 						{
+							icon = "",
+							key = "e",
+							desc = "Open Yazi Explorer",
+							action = "<cmd>Yazi<cr>",
+						},
+						{
 							icon = "",
 							key = "c",
 							desc = "Config",

@@ -14,6 +14,60 @@ local function progress_location()
 	return string.format("%d:%d (%d%%%%)", line, col, progress)
 end
 
+local function get_tab_components()
+	local components = {}
+	local current_tab = vim.fn.tabpagenr()
+
+	local function spacer()
+		return {
+			function()
+				return " "
+			end,
+			color = { bg = "none" },
+		}
+	end
+
+	table.insert(components, {
+		function()
+			return ""
+		end,
+		color = { bg = "#313244", fg = "#a6adc8" },
+		separator = { right = "\u{e0bc}" },
+	})
+
+	table.insert(components, spacer())
+
+	for _, tab in ipairs(vim.fn.gettabinfo()) do
+		local tabnr = tab.tabnr
+
+		table.insert(components, {
+			function()
+				local winnr = vim.fn.tabpagewinnr(tabnr)
+				local buflist = vim.fn.tabpagebuflist(tabnr)
+				local bufnr = buflist[winnr]
+				local filename = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":t")
+				if filename == "" then
+					filename = "[No Name]"
+				end
+				local modified = vim.fn.getbufvar(bufnr, "&modified") == 1 and " " or ""
+				return string.format("%s%s", filename, modified)
+			end,
+			color = function()
+				if tabnr == current_tab then
+					return { bg = "#89b4fa", fg = "#1e1e2e", gui = "bold" }
+				else
+					return { bg = "#313244", fg = "#a6adc8" }
+				end
+			end,
+			separator = { left = "", right = "\u{e0bc}" },
+		})
+
+		table.insert(components, spacer())
+	end
+
+	return components
+end
+
 return {
 	{
 		"nvim-lualine/lualine.nvim",
@@ -27,6 +81,13 @@ return {
 				component_separators = { left = "", right = "" },
 				globalstatus = true,
 				always_show_tabline = true,
+				disabled_filetypes = {
+					statusline = { "snacks_dashboard" },
+					winbar = { "snacks_dashboard" },
+				},
+			},
+			tabline = {
+				lualine_c = get_tab_components(),
 			},
 			sections = {
 				lualine_a = {},
@@ -90,7 +151,7 @@ return {
 					{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 					{
 						"diagnostics",
-						symbols = { error = " ", warn = " ", info = " ", hint = "● " },
+						symbols = { error = " ", warn = " ", info = " ", hint = " " },
 					},
 				},
 				lualine_x = { "filetype", "lsp_status", progress_location },
@@ -98,5 +159,15 @@ return {
 				lualine_z = {},
 			},
 		},
+		config = function(_, opts)
+			local function reapply_tabline()
+				opts.tabline = { lualine_c = get_tab_components() }
+				require("lualine").setup(opts)
+			end
+
+			vim.api.nvim_create_autocmd({ "TabNew", "TabClosed", "TabEnter", "BufEnter", "BufModifiedSet" }, {
+				callback = reapply_tabline,
+			})
+		end,
 	},
 }

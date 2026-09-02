@@ -1,11 +1,11 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Theme
-config.color_scheme = dofile(os.getenv('HOME') .. "/.config/theme/current/wezterm.lua")
+config.color_scheme = dofile(os.getenv("HOME") .. "/.config/theme/current/wezterm.lua")
 
 -- Font
-config.font = wezterm.font('JetBrains Mono', { weight = 'Regular' })
+config.font = wezterm.font("JetBrains Mono", { weight = "Regular" })
 config.font_size = 12.0
 config.line_height = 1.1
 
@@ -31,28 +31,28 @@ config.animation_fps = 60
 config.front_end = "WebGpu"
 
 -- Leader key for wezterm-level actions
-config.leader = { key = 't', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
-  { key = '|', mods = 'LEADER|SHIFT', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-  { key = '-', mods = 'LEADER',       action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
+	{ key = "|", mods = "LEADER|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "-", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
-  { key = 'h', mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Left' },
-  { key = 'j', mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Down' },
-  { key = 'k', mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Up' },
-  { key = 'l', mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Right' },
+	{ key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right") },
 
-  { key = '=', mods = 'CTRL', action = wezterm.action.IncreaseFontSize },
-  { key = '-', mods = 'CTRL', action = wezterm.action.DecreaseFontSize },
-  { key = '0', mods = 'CTRL', action = wezterm.action.ResetFontSize },
+	{ key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
+	{ key = "-", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
+	{ key = "0", mods = "CTRL", action = wezterm.action.ResetFontSize },
 
-  { key = 'x', mods = 'LEADER', action = wezterm.action.ActivateCopyMode },
-  { key = 'f', mods = 'LEADER', action = wezterm.action.Search { CaseSensitiveString = '' } },
+	{ key = "x", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
+	{ key = "f", mods = "LEADER", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
 
-  { key = 't', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
-  { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentTab { confirm = false } },
+	{ key = "T", mods = "CTRL", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+	{ key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
 
-  { key = 'r', mods = 'LEADER', action = wezterm.action.ReloadConfiguration },
+	{ key = "r", mods = "LEADER", action = wezterm.action.ReloadConfiguration },
 }
 
 config.automatically_reload_config = true
