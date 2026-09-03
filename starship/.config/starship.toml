@@ -104,13 +104,13 @@ format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
 [kubernetes]
 disabled = false
-style = "bg:sapphire black"
+style = "bg:blue black"
 symbol = ""
 format = '[ $symbol $context( \($namespace\)) ]($style)'
 
 [aws]
 disabled = false
-style = "bg:sapphire black"
+style = "bg:blue black"
 symbol = ""
 format = '[$symbol $profile( \($region\)) ]($style)'
 

@@ -7,6 +7,8 @@ return {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {},
+		opts = {
+			exclude_filetypes = { "dap-view", "dap-view-term", "dap-repl", "snacks_dashboard" },
+		},
 	},
 }

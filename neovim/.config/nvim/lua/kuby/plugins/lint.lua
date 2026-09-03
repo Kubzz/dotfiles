@@ -9,6 +9,7 @@ return {
 				sh = { "shellcheck" },
 				bash = { "shellcheck" },
 				yaml = { "yamllint" },
+				python = { "ruff" },
 			}
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {

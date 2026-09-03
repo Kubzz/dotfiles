@@ -1,96 +1,99 @@
 return {
-    {
-        "mason-org/mason.nvim",
-        cmd = "Mason",
-        opts = {},
-        keys = {
-            { "<Leader>m", "<cmd>Mason<cr>", desc = "Mason" },
-        },
-    },
-    {
-        "mason-org/mason-lspconfig.nvim",
-        opts = {
-            ensure_installed = {
-                -- Bash
-                "bashls",
+	{
+		"mason-org/mason.nvim",
+		cmd = "Mason",
+		opts = {},
+		keys = {
+			{ "<Leader>m", "<cmd>Mason<cr>", desc = "Mason" },
+		},
+	},
+	{
+		"mason-org/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = {
+				-- Bash
+				"bashls",
 
-                -- CSS
-                "cssls",
+				-- CSS
+				"cssls",
 
-                -- Docker
-                "docker_language_server",
+				-- Docker
+				"docker_language_server",
 
-                -- GoLang
-                "gopls",
+				-- GoLang
+				"gopls",
 
-                -- HTML
-                "html",
+				-- HTML
+				"html",
 
-                -- Lua
-                "lua_ls",
+				-- Lua
+				"lua_ls",
 
-                -- Python
-                "basedpyright",
+				-- Python
+				"basedpyright",
 
-                -- "Typescript"
-                "ts_ls",
+				-- "Typescript"
+				"ts_ls",
 
-                -- Vue
-                "vue_ls",
+				-- Vue
+				"vue_ls",
 
-                -- Yaml
-                "yamlls",
-            },
-        },
-    },
-    {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        opts = {
-            ensure_installed = {
-                -- CSS
-                "csskit",
+				-- Yaml
+				"yamlls",
+			},
+		},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				-- CSS
+				"csskit",
 
-                -- GoLang
-                "delve",
-                "golangci-lint",
-                "goimports",
-                "golines",
+				-- GoLang
+				"delve",
+				"golangci-lint",
+				"goimports",
+				"golines",
 
-                -- HTML
-                "htmlhint",
+				-- HTML
+				"htmlhint",
 
-                -- Java
-                "google-java-format",
+				-- Java
+				"google-java-format",
 
-                -- JSON
-                "jq",
-                "json-repair",
+				-- JSON
+				"jq",
+				"json-repair",
 
-                -- Lua
-                "stylua",
+				-- Lua
+				"stylua",
 
-                -- Prettier
-                "prettier",
+				-- Prettier
+				"prettier",
 
-                -- Python
-                "black",
-                "isort",
-                "ruff",
+				-- Python
+				"black",
+				"isort",
+				"ruff",
 
-                -- SQL
-                "sqlfmt",
+				-- SQL
+				"sqlfmt",
 
-                --Typescript
-                "ts-standard",
+				-- Sonarlint
+				"sonarlint-language-server",
 
-                -- XML
-                "xmlformatter",
+				--Typescript
+				"ts-standard",
 
-                -- Yaml
-                "yamlfmt",
-                "yamllint",
-            },
-        },
-        auto_update = true,
-    },
+				-- XML
+				"xmlformatter",
+
+				-- Yaml
+				"yamlfmt",
+				"yamllint",
+			},
+		},
+		auto_update = true,
+	},
 }
