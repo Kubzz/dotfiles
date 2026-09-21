@@ -2,20 +2,8 @@
 
 add_newline = true
 
-# Left
-# OS, User, Path, Git (branch, metrics, ststus)
-# Fill
-# Right
-# Duration, Language(c, go, java, kotlin, lua, maven, node, python, rust), Cloud(AWS, kubernetes), 
-# Second
-# Sudo Character
-
-#format = """\
-#[╭╴](238)[](red)$os$username[](bg:peach fg:red)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$c$rust$golang$nodejs$java$kotlin$python$lua[](fg:green bg:blue)$kubernetes$aws[](fg:blue bg:lavender)$memory_usage[ ](fg:lavender)$cmd_duration\
-#$line_break[╰─](238)[](red)$sudo[](bg:red fg:red)$character"""
-
 format = """\
-[╭╴](238)$os$username[](fg:red)$directory[](fg:peach)$git_branch$git_status$git_metrics[](fg:yellow)[](fg:green)$cmd_duration[](fg:blue)$c$golang$java$kotlin$lua$maven$nodejs$python$rust[](fg:lavender)$docker_context$aws$kubernetes$line_break\
+[╭╴](238)$os$username[](fg:red)$directory[](fg:peach)$git_branch$git_status$git_metrics[](fg:yellow)[](fg:green)$c$golang$java$kotlin$lua$maven$nodejs$python$rust[](fg:blue)$docker_context$aws$kubernetes[](fg:lavender)$cmd_duration$line_break\
 [╰─](238)$sudo$character\
 """
 
@@ -79,6 +67,68 @@ format = '[$all_status$ahead_behind ]($style)'
 [git_metrics]
 disabled = false
 
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[java]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[lua]
+symbol = "󰢱"
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[maven]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[nodejs]
+symbol = "󰎙"
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:green)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:green)]($style)'
+
+[docker_context]
+symbol = ""
+style = "fg:blue"
+format = '[[ $symbol( $context) ](fg:blue)]($style)'
+
+[aws]
+disabled = false
+style = "fg:blue"
+symbol = ""
+format = '[ $symbol $profile( \($region\)) ]($style)'
+
+[kubernetes]
+disabled = false
+style = "fg:blue"
+symbol = ""
+format = '[ $symbol $context( \($namespace\)) ]($style)'
+
 [cmd_duration]
 show_milliseconds = true
 format = " $duration "
@@ -87,67 +137,11 @@ disabled = false
 show_notifications = true
 min_time_to_notify = 45000
 
-[c]
-symbol = " "
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[golang]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[java]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[kotlin]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[lua]
-symbol = "󰢱"
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[maven]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[nodejs]
-symbol = "󰎙"
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[python]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:blue)]($style)'
-
-[rust]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:blue)]($style)'
-
-[docker_context]
-symbol = ""
-style = "bf:lavender"
-format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
-
-[kubernetes]
+[sudo]
 disabled = false
-style = "fg:lavender"
-symbol = ""
-format = '[ $symbol $context( \($namespace\)) ]($style)'
-
-[aws]
-disabled = false
-style = "fg:lavender"
-symbol = ""
-format = '[$symbol $profile( \($region\)) ]($style)'
+symbol = ""
+style = "fg:red"
+format = '[$symbol ]($style)'
 
 [character]
 disabled = false
@@ -157,12 +151,6 @@ vimcmd_symbol = '[❮](bold fg:green)'
 vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
 vimcmd_replace_symbol = '[❮](bold fg:lavender)'
 vimcmd_visual_symbol = '[❮](bold fg:yellow)'
-
-[sudo]
-disabled = false
-symbol = ""
-style = "fg:red"
-format = '[ $symbol ]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
