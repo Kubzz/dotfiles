@@ -3,7 +3,7 @@
 add_newline = true
 
 format = """\
-[╭╴](238)$os$username[](fg:red)$directory[](fg:peach)$git_branch$git_status$git_metrics[](fg:yellow)[](fg:green)$c$golang$java$kotlin$lua$maven$nodejs$python$rust[](fg:blue)$docker_context$aws$kubernetes[](fg:lavender)$cmd_duration$line_break\
+[╭╴](238)$os$username[](fg:red)$directory[](fg:peach)$git_branch$git_status$git_metrics[](fg:yellow)$c$golang$java$kotlin$lua$maven$nodejs$python$rust[](fg:green)$docker_context$aws$kubernetes[](fg:blue)$cmd_duration$line_break\
 [╰─](238)$sudo$character\
 """
 
