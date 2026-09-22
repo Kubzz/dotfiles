@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Theme
-config.color_scheme = dofile(os.getenv("HOME") .. "/.config/theme/current/wezterm.lua")
+config.color_scheme = "Catppuccin Mocha"
 
 -- Font
 config.font = wezterm.font("JetBrains Mono", { weight = "Regular" })
