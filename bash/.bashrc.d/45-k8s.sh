@@ -1,11 +1,10 @@
 #!/bin/bash
 
+export KUBE_EDITOR="nvim"
+
 _binary_exists kubectl || return 
 
 alias k=kubectl
-
-# Execute a kubectl command against all namespaces
-alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
 
 # Apply a YML file
 alias kaf='kubectl apply -f'

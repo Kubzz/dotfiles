@@ -1,0 +1,8 @@
+---
+appearance:
+  colorscheme: "dark:catppuccin-mocha, light:catppuccin-latte"
+log_viewer:
+  tail_lines: 10000
+  tail_lines_short: 100
+events:
+  warnings_only: false

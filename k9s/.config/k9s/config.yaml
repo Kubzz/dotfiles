@@ -1,0 +1,5 @@
+---
+k9s:
+  ui:
+    enableMouse: true
+    skins: catppuccin-mocha

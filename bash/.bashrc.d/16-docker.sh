@@ -42,3 +42,5 @@ alias dvls='docker volume ls'
 alias dvprune='docker volume prune'
 alias dxc='docker container exec'
 alias dxcit='docker container exec -it'
+
+alias lzd="lazydocker"
